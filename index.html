@@ -9,13 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Noé Fernández - Index</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="vendor/clean-blog/css/clean-blog.min.css" rel="stylesheet">
+
+    <!--  Custom CSS -->
+    <link href="css/underdevelopment.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,6 +36,18 @@
 
 <body>
 
+    <!-- Under development warning -->
+    <div id="underDevelopmentWall" class="overlay">
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+         <img src="img/under_development.png";>
+        <a>This website is under development yet.</a>
+      </div>
+
+    </div>
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -42,7 +57,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.html">Noé Fernández</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,9 +89,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1>Hello world!</h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">This website is under development.</span>
                     </div>
                 </div>
             </div>
@@ -175,20 +190,29 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                    <p class="copyright text-muted">Copyright &copy; Noé Fernández 2017</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="vendor/clean-blog/js/clean-blog.min.js"></script>
+    <script type="text/javascript" src="vendor/clean-blog/js/clean-blog.min.js"></script>
+
+    <!-- Under development warning -->
+    <script type="text/javascript">
+    $(document).keypress(function(e) {
+      if(e.which == 35) {
+          $("#underDevelopmentWall").width("0%");
+      }
+      });
+    </script>
 
 </body>
 
