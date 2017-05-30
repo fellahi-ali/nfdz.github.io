@@ -174,8 +174,10 @@ function startBreak() {
 }
 
 // ADD + SUBTRACT TIME FUNCTIONS
-var breakTime = 3;
-var sessionTime = 15;
+
+// default values:
+var breakTime = 5;
+var sessionTime = 25;
 var timerStopped = true;
 
 $(document).ready(function() {
