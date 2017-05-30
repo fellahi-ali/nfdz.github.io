@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+
+  <body>
+
+    <!-- Title header box -->
+    <div id="wrapper" style="text-align: center">
+    <div class="titlebox">
+      <h1>POMODORO</h1>
+      <h5>My personal implementation of this famous timer</h5>
+    </div>
+  </div>
+    <!-- Controls -->
+    <h4 class="control-title">Session</h4>
+    <h2>
+      <span class="time-adjust" id="subtract-session">-</span>
+      <span id="session-time"></span>
+      <span class="unit">min</span>
+      <span class="time-adjust" id="add-session">+</span>
+    </h2>
+    <h4 class="control-title">Break</h4>
+    <h2>
+      <span class="time-adjust" id="subtract-break">-</span>
+      <span id="break-time"></span>
+      <span class="unit">min</span>
+      <span class="time-adjust" id="add-break">+</span>
+    </h2>
+
+    <!-- Timer -->
+    <canvas id="timer" width="400" height="400">Sorry, but it looks like your browser doesn't support HTML5</canvas>
+
+    <audio id="audio" src="alarm.ogg" autostart="false" ></audio>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+    <!-- app -->
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+
+</html>
