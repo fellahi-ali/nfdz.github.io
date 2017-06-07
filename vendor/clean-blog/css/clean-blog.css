@@ -30,7 +30,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #1E90FF;
+  color: #1E90FF; /* <- This is the accent color */
 }
 a img:hover,
 a img:focus {
