@@ -1,4 +1,5 @@
 /*!
+ * It has modifications of nfdz.
  * Start Bootstrap - Clean Blog v3.3.7+1 (http://startbootstrap.com/template-overviews/clean-blog)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
@@ -29,7 +30,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #0085A1;
+  color: #1E90FF;
 }
 a img:hover,
 a img:focus {
@@ -70,7 +71,6 @@ hr.small {
   position: fixed;
   top: -52px;
   background-color: rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid #f2f2f2;
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
@@ -107,7 +107,7 @@ hr.small {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .navbar-custom .nav li a {
-  top: -7px;
+  top: -9px;
   text-transform: uppercase;
   font-size: 12px;
   color: black;
@@ -120,7 +120,7 @@ hr.small {
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
   background-color: rgba(227, 227, 227, 0.9);
-  color: black;
+  color: #1E90FF;
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
