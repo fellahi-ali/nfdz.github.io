@@ -23,6 +23,7 @@ jQuery(document).ready(function($) {
             if (hasToggleMenu == true) {
                 var isOpen = $("#navbar-collapse-1").hasClass("in");
                 ignore = isOpen;
+                if (isOpen == true) $('.navbar-custom').addClass('is-visible is-fixed');
             }
             if (ignore == false) {
               var currentTop = $(window).scrollTop();
