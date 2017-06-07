@@ -89,6 +89,8 @@ hr.small {
   color: black;
   font-size: 20px;
 }
+.navbar-custom .navbar-brand:active {
+}
 .navbar-custom .navbar-header .navbar-toggle {
   color: black;
   text-transform: uppercase;
