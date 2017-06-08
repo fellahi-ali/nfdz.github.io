@@ -25,12 +25,12 @@
 }
 .justify-text {
   text-align: justify;
-  text-justify: inter-word;
+  text-justify: auto;
 }
 .col-section {
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
   .col-section {
     padding-left: 40px;
     padding-right: 40px;
