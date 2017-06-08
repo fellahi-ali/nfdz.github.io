@@ -1,0 +1,25 @@
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    vertical-align: middle;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.col-fixed {
+  width:400px;
+}
+.col-min {
+  min-width:400px;
+}
+.col-max {
+  max-width:400px;
+}
+.section-separator {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
