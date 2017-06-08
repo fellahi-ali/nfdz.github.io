@@ -2,32 +2,44 @@
  * This script change html text of #terminal-text emulating the behaviour of
  * a terminal. It writes and erases several sentences, waiting a time to
  * let read it.
+ * TODO: implement pause and resume method
  */
 jQuery(document).ready(function($) {
   // check if there is a header terminal
   if( $('#terminal-text').length ) {
 
     // Writing/Erasing Frequency (in millis)
-    var frequency = 50;
+    var frequency = 60;
     // Cursor  html
     var cursor = '<span style="color:#1E90FF">|</span>'
-    var hiddenCursor = '<span style="color:#00000000">|</span>'
+    var hiddenCursor = '&nbsp'
     // Frames (relative to frequency) to perform a blink (show/hide cursor)
     var framesPerBlink = 7;
     // Sentences to write
     var sentences = [
-      "Hello World",
-      "I am Noé",
-      "Nice to meet you",
-      "I am a android developer",
-      "I am a telematic engineer"];
+      "I am an Android developer",
+      "I am a traveler",
+      "I am a telematics engineer",
+      "I am a siesta advocate",
+      "I am a software developer",
+      "I am a team player",
+      "I am a software libre advocate",
+      "I am a science fiction movie critic",
+      "I am a Raspberry Pi and Arduino maker",
+      "I am a lover of live music"
+    ];
     // Frames (relative to frequency) to wait before start erasing
     var framesToWait = [
-      20,
-      20,
-      60,
-      60,
-      60
+      70,
+      50,
+      70,
+      50,
+      70,
+      50,
+      70,
+      50,
+      70,
+      50
     ];
 
     var currentSentenceIndex = 0;
@@ -44,14 +56,14 @@ jQuery(document).ready(function($) {
       var isWriting = counter < currentSentence.length;
       if (isWriting == true) {
         counter++;
-        if (counter <= currentSentence.length) {
+        if (counter >= currentSentence.length) {
           // if it is the last one character, hide cursor and set flags
           $('#terminal-text').html(currentSentence.substring(0, counter) + hiddenCursor);
           cursorOn = false;
           reverseCounter = currentSentence.length;
           framesCounter = 0;
         } else {
-            $('#terminal-text').html(currentSentence.substring(0, counter) + cursor);
+          $('#terminal-text').html(currentSentence.substring(0, counter) + cursor);
         }
       } else {
         // check if it is waiting to start erasing
@@ -85,7 +97,7 @@ jQuery(document).ready(function($) {
               // show cursor
               cursorOn = true;
               $('#terminal-text').html(function(i, origText){
-                var text = origText.substring(0, origText.length - hiddenCursor.length);
+                var text = origText.substring(0, origText.length - 6);
                 return text + cursor;
               });
             }
