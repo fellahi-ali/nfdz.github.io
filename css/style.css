@@ -27,11 +27,12 @@
   text-align: justify;
   text-justify: inter-word;
 }
-
 .col-section {
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 @media only screen and (min-width: 768px) {
+  .col-section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
