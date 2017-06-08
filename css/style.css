@@ -11,15 +11,27 @@
     margin-right:-4px;
 }
 .col-fixed {
-  width:400px;
+  width:350px;
 }
 .col-min {
-  min-width:400px;
+  min-width:374px;
 }
 .col-max {
-  max-width:400px;
+  max-width:350px;
 }
 .section-separator {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.col-section {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media only screen and (min-width: 768px) {
 }
