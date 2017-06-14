@@ -40,14 +40,14 @@
 
 <body>
 
-    <!-- Under development warning -->
-    <div id="underDevelopmentWall" class="overlay">
-      <!-- Overlay content -->
+    <!-- Under development warning
+    <div id="underDevelopmentWall" class="overlay"> -->
+      <!-- Overlay content
       <div class="overlay-content">
          <img src="img/under_development.png";>
         <a>This website is under development yet.</a>
       </div>
-    </div>
+    </div> -->
 
 
     <!-- [_common] Navigation START -->
@@ -140,8 +140,40 @@
       <div class="row row-centered">
         <div class="col-xs-8 col-centered col-section">
           <h2> Education </h2>
-          <img src="img/work-experience.png" alt="Work experience" width="100%">
-          <a href="http://link">Download my CV.</a>
+
+          <div class="timeline">
+              <div class="timeline-entry">
+                <div class="timeline-entry-date"> 08/2000-02/2015 </div>
+                <div class="timeline-entry-title"> ABC </div>
+                <div class="timeline-entry-button">
+                  <button data-label1="More" data-label2="Less">More</button>
+                </div>
+                <div class="timeline-entry-summary">
+                     Lorem Ipsum es simplemente el texto de relleno de las imprentas
+                     y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
+                     de las industrias desde el año 1500, cuando un impresor (N. del T.
+                     persona que se dedica a la imprenta) desconocido usó una galería de textos
+                     y los mezcló de tal manera que logró hacer un libro de textos especimen.
+                </div>
+              </div>
+              <div class="timeline-entry-separator"></div>
+              <div class="timeline-entry">
+                <div class="timeline-entry-date"> 08/2000-02/2015 </div>
+                <div class="timeline-entry-title"> ABC </div>
+                <div class="timeline-entry-button">
+                  <button data-label1="More" data-label2="Less">More</button>
+                </div>
+                <div class="timeline-entry-summary timeline-end">
+                     Lorem Ipsum es simplemente el texto de relleno de las imprentas
+                     y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
+                     de las industrias desde el año 1500, cuando un impresor (N. del T.
+                     persona que se dedica a la imprenta) desconocido usó una galería de textos
+                     y los mezcló de tal manera que logró hacer un libro de textos especimen.
+                </div>
+              </div>
+          </div>
+
+
         </div>
       </div>
       <hr class="section-separator">
@@ -223,6 +255,9 @@
 
     <!-- Header terminal JavaScript -->
     <script type="text/javascript" src="js/header-terminal.js"></script>
+
+    <!-- Timeline JavaScript -->
+    <script type="text/javascript" src="js/timeline.js"></script>
 
     <!-- Under development warning -->
     <script type="text/javascript">
