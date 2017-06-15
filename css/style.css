@@ -29,11 +29,40 @@
 }
 .col-section {
 }
-
+.contact-email {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  font-size: 18px;
+}
+.contact-networks {
+  text-align: center;
+  font-size: 12px;
+}
+@media only screen and (min-height: 850px) {
+  .contact-email {
+    margin-top: 80px;
+    margin-bottom: 160px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .contact-email {
+    font-size: 36px;
+  }
+  .contact-networks {
+    font-size: 14px;
+  }
+}
 @media only screen and (min-width: 1000px) {
   .col-section {
     padding-left: 40px;
     padding-right: 40px;
+  }
+  .contact-email {
+    font-size: 46px;
+  }
+  .contact-networks {
+    font-size: 16px;
   }
 }
 
