@@ -42,31 +42,27 @@
   width: 100%;
 }
 .timeline-entry {
-  text-align: left;
 }
 .timeline-entry-date {
-  text-align: right;
-  width: 50%;
-  padding-right: 10px;
-  font-size: 14px;
-  font-style: italic;
-  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  color: #3d3d3d;
 }
 .timeline-entry-button {
   margin-left: 5px;
-  display: inline-block;
+  text-align: center;
+  padding-bottom: 10px;
 }
 .timeline-entry-title {
-  text-align: left;
+  text-align: center;
   font-size: 24px;
   padding-left: 10px;
   font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
-  display: inline-block;
 }
 .timeline-entry-summary {
-  padding: 20px;
-  font-size: 18px;
+  text-align: left;
+  padding-bottom: 20px;
   border-bottom: 2px dashed #000000;
   display:none
 }
@@ -74,7 +70,7 @@
   border: inherit;
 }
 .timeline-entry-separator {
-  height: 100px;
+  height: 50px;
   width: 51%;
   border-right: 2px solid black;
 }
