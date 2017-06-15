@@ -37,6 +37,9 @@
   }
 }
 
+
+/* Timeline styles */
+
 .timeline {
   margin-top: 30px;
   width: 100%;
@@ -70,7 +73,7 @@
   border: inherit;
 }
 .timeline-entry-separator {
-  height: 50px;
+  height: 30px;
   width: 51%;
   border-right: 2px solid black;
 }
