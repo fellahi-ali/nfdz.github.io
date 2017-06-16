@@ -37,35 +37,13 @@
   -o-user-select: none;
   user-select: none;
 }
-.contact-email {
-  text-align: center;
-  font-size: 18px;
-  color: #FFFFFF;
-  font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
-}
-.contact-networks {
-  text-align: center;
-  font-size: 12px;
-}
-@media only screen and (min-width: 768px) {
-  .contact-email {
-    font-size: 36px;
-  }
-  .contact-networks {
-    font-size: 14px;
-  }
+.modal-open {
+    overflow: scroll;
 }
 @media only screen and (min-width: 1000px) {
   .col-section {
     padding-left: 40px;
     padding-right: 40px;
-  }
-  .contact-email {
-    font-size: 46px;
-  }
-  .contact-networks {
-    font-size: 16px;
   }
 }
 
