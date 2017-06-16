@@ -38,7 +38,15 @@
   user-select: none;
 }
 .modal-open {
-    overflow: scroll;
+  overflow: scroll;
+}
+.contact-email {
+  font-size: 14px;
+}
+@media only screen and (min-width: 768px) {
+  .contact-email {
+    font-size: 24px;
+  }
 }
 @media only screen and (min-width: 1000px) {
   .col-section {
