@@ -168,3 +168,27 @@
 	-ms-transform:rotateX(180deg);
 	transform:rotateX(180deg);
 }
+
+/* Projects styles */
+.projects-filter {
+  text-align: center;
+}
+.projects-filter li {
+  display: inline-block;
+}
+.projects-filter li a {
+  outline: 0;
+  background-color: black;
+  margin: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: inline-block;
+  border-radius: 10px;
+  color: white;
+}
+.projects-filter li a:hover {
+  text-decoration: inherit;
+  background-color: #1E90FF;
+}
