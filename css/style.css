@@ -29,21 +29,24 @@
 }
 .col-section {
 }
+.unselectable {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
 .contact-email {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 100px;
   font-size: 18px;
+  color: #FFFFFF;
+  font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
 }
 .contact-networks {
   text-align: center;
   font-size: 12px;
-}
-@media only screen and (min-height: 850px) {
-  .contact-email {
-    margin-top: 80px;
-    margin-bottom: 160px;
-  }
 }
 @media only screen and (min-width: 768px) {
   .contact-email {
