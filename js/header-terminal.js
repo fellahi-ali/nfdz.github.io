@@ -18,6 +18,7 @@ jQuery(document).ready(function($) {
     // Sentences to write
     var sentences = [
       "Hi! Nice to meet you",
+      "I am Noé Fernández",
       "I am a software engineer",
       "I am a traveler",
       "I am an Android developer",
@@ -32,16 +33,17 @@ jQuery(document).ready(function($) {
     // Frames (relative to frequency) to wait before start erasing
     var framesToWait = [
       30,
-      80,
-      50,
-      80,
-      80,
-      80,
-      80,
-      80,
-      50,
-      50,
-      50
+      30,
+      40,
+      30,
+      40,
+      40,
+      40,
+      40,
+      40,
+      30,
+      30,
+      30
     ];
 
     var currentSentenceIndex = 0;
