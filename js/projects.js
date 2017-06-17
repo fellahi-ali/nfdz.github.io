@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
     itemSelector: '.project-grid-item',
     layoutMode: 'fitRows'
   });
+  removeFilter();
 });
 
 function removeFilter(){

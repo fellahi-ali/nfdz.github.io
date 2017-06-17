@@ -17,28 +17,30 @@ jQuery(document).ready(function($) {
     var framesPerBlink = 7;
     // Sentences to write
     var sentences = [
-      "I am an Android developer",
+      "Hi! Nice to meet you",
+      "I am a software engineer",
       "I am a traveler",
-      "I am a telematics engineer",
-      "I am a siesta advocate",
-      "I am a software developer",
+      "I am an Android developer",
       "I am a team player",
+      "I am a telematics engineer",
       "I am a software libre advocate",
-      "I am a science fiction movie critic",
       "I am a Raspberry Pi and Arduino maker",
+      "I am a siesta advocate",
+      "I am a science fiction movie critic",
       "I am a lover of live music"
     ];
     // Frames (relative to frequency) to wait before start erasing
     var framesToWait = [
-      70,
+      30,
+      80,
       50,
-      70,
+      80,
+      80,
+      80,
+      80,
+      80,
       50,
-      70,
       50,
-      70,
-      50,
-      70,
       50
     ];
 
