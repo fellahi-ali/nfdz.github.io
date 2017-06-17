@@ -17,6 +17,9 @@
 .scrollTop-button:hover {
   background-color: #555;
 }
+.scrollTop-button:active {
+  background-color: #1E90FF; /* <- This is the accent color */
+}
 .row-centered {
   text-align:center;
 }
