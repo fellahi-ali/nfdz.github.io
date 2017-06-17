@@ -174,14 +174,16 @@
   text-align: center;
   padding: 0;
   margin: 0;
+  margin-bottom: 50px;
 }
 .projects-filter li {
   display: inline-block;
 }
 .projects-filter li a {
+  font-size: 15px;
   outline: 0;
   background-color: black;
-  margin: 15px;
+  margin: 8px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -196,4 +198,33 @@
 }
 .filter-active {
   background-color: #1E90FF !important;
+}
+.projects-grid {
+  text-align: center;
+}
+.project-grid-item {
+  text-align: center;
+  border: 2px solid black;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 15px;
+  width: 60%;
+  display: inherit;
+}
+.project-grid-item img {
+  max-width: 400px;
+  width: 50%
+}
+.project-grid-item img:hover {
+  cursor: inherit;
+}
+.project-grid-item p {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+  font-style: italic;
+}
+@media only screen and (min-width: 768px) {
+  .project-grid-item h4 {
+    font-size: 24px;
+  }
 }
