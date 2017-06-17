@@ -1,3 +1,22 @@
+.scrollTop-button {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #1E90FF; /* <- This is the accent color */
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 15px;
+  font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+.scrollTop-button:hover {
+  background-color: #555;
+}
 .row-centered {
   text-align:center;
 }
@@ -194,10 +213,10 @@
 }
 .projects-filter li a:hover {
   text-decoration: inherit;
-  background-color: #1E90FF;
+  background-color: #1E90FF; /* <- This is the accent color */
 }
 .filter-active {
-  background-color: #1E90FF !important;
+  background-color: #1E90FF !important; /* <- This is the accent color */
 }
 .projects-grid {
   text-align: center;

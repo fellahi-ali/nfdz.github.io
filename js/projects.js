@@ -1,12 +1,3 @@
-jQuery(document).ready(function($) {
-  $('.projects-grid').isotope({
-    // options
-    itemSelector: '.project-grid-item',
-    layoutMode: 'fitRows'
-  });
-  removeFilter();
-});
-
 function removeFilter(){
   $('.projects-grid').isotope({ filter: '*' });
   $('.filter-active').removeClass('filter-active');
@@ -32,3 +23,11 @@ function filterWeb(){
   $('.filter-active').removeClass('filter-active');
   $('.web-filter').addClass('filter-active');
 }
+jQuery(document).ready(function($) {
+  $('.projects-grid').isotope({
+    // options
+    itemSelector: '.project-grid-item',
+    layoutMode: 'fitRows'
+  });
+  removeFilter();
+});

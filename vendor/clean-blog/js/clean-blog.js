@@ -18,25 +18,32 @@ jQuery(document).ready(function($) {
             previousTop: 0
         },
         function() {
+            // Navigation bar
             var hasToggleMenu = $(window).width() <= MQL;
             var ignore = false;
             if (hasToggleMenu == true) {
                 var isOpen = $("#navbar-collapse-1").hasClass("in");
                 ignore = isOpen;
-                if (isOpen == true) $('.navbar-custom').addClass('is-visible is-fixed');
+                if (isOpen == true) {
+                  $('.navbar-custom').addClass('is-visible is-fixed');
+                  $(".scrollTop-button").fadeIn(200);
+                }
             }
             if (ignore == false) {
-              var currentTop = $(window).scrollTop();
               //check if user is scrolling up
+              var currentTop = $(window).scrollTop();
               if (currentTop < this.previousTop) {
                   //if scrolling up...
                   if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
+                      $(".scrollTop-button").fadeIn(200);
                       $('.navbar-custom').addClass('is-visible');
                   } else {
+                      $(".scrollTop-button").fadeOut(200);
                       $('.navbar-custom').removeClass('is-visible is-fixed');
                   }
               } else if (currentTop > this.previousTop) {
                   //if scrolling down...
+                  $(".scrollTop-button").fadeOut(200);
                   $('.navbar-custom').removeClass('is-visible');
                   if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
               }
@@ -44,3 +51,10 @@ jQuery(document).ready(function($) {
             this.previousTop = currentTop;
         });
 });
+
+function scrollToTop() {
+  $('body,html').animate({
+		scrollTop: 0
+	}, 800);
+	return false;
+}
