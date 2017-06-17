@@ -14,11 +14,8 @@
   font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
-.scrollTop-button:hover {
-  background-color: #555;
-}
 .scrollTop-button:active {
-  background-color: #1E90FF; /* <- This is the accent color */
+  background-color: #555;
 }
 .row-centered {
   text-align:center;
