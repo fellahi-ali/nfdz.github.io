@@ -6,6 +6,28 @@ jQuery(document).ready(function($) {
   });
 });
 
-function filterProjects(){
-    $('.projects-grid').isotope({ filter: '.android' })
+function removeFilter(){
+  $('.projects-grid').isotope({ filter: '*' });
+  $('.filter-active').removeClass('filter-active');
+  $('.all-filter').addClass('filter-active');
+}
+function filterAndroid(){
+  $('.projects-grid').isotope({ filter:  '.android' });
+  $('.filter-active').removeClass('filter-active');
+  $('.android-filter').addClass('filter-active');
+}
+function filterJava(){
+  $('.projects-grid').isotope({ filter:  '.java' });
+  $('.filter-active').removeClass('filter-active');
+  $('.java-filter').addClass('filter-active');
+}
+function filterArduino(){
+  $('.projects-grid').isotope({ filter:  '.arduino' });
+  $('.filter-active').removeClass('filter-active');
+  $('.arduino-filter').addClass('filter-active');
+}
+function filterWeb(){
+  $('.projects-grid').isotope({ filter:  '.web' });
+  $('.filter-active').removeClass('filter-active');
+  $('.web-filter').addClass('filter-active');
 }

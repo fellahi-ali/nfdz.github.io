@@ -194,3 +194,6 @@
   text-decoration: inherit;
   background-color: #1E90FF;
 }
+.filter-active {
+  background-color: #1E90FF !important;
+}
