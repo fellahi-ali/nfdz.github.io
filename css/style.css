@@ -224,7 +224,6 @@
 }
 .project-grid-item {
   text-align: center;
-  border: 2px solid black;
   margin-left: 20%;
   margin-right: 20%;
   margin-bottom: 15px;
@@ -232,8 +231,7 @@
   display: inherit;
 }
 .project-grid-item img {
-  max-width: 400px;
-  width: 50%
+  width: 85%
 }
 .project-grid-item img:hover {
   cursor: inherit;

@@ -18,7 +18,6 @@
     <link href="vendor/clean-blog/css/clean-blog.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/underdevelopment.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -39,15 +38,6 @@
 </head>
 
 <body>
-
-    <!-- Under development warning -->
-    <div id="underDevelopmentWall" class="overlay">
-      <!-- Overlay content -->
-      <div class="overlay-content">
-         <img src="img/under_development.png";>
-         <a>This website is under development yet.</a>
-      </div>
-    </div>
 
     <button onclick="scrollToTop()" class="scrollTop-button" title="Go to top">Back to top</button>
 
@@ -350,15 +340,6 @@
 
     <!-- Timeline JavaScript -->
     <script type="text/javascript" src="js/timeline.js"></script>
-
-    <!-- Under development warning -->
-    <script type="text/javascript">
-    $(document).keypress(function(e) {
-      if(e.which == 35) {
-          $("#underDevelopmentWall").width("0%");
-      }
-      });
-    </script>
 
 </body>
 

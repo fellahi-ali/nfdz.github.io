@@ -88,6 +88,7 @@ hr.small {
   font-family: 'Nunito', sans-serif;
   color: black;
   font-size: 20px;
+  outline: 0;
 }
 .navbar-custom .navbar-header .navbar-toggle {
   color: black;

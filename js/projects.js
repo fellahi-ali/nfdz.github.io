@@ -18,10 +18,20 @@ function filterArduino(){
   $('.filter-active').removeClass('filter-active');
   $('.arduino-filter').addClass('filter-active');
 }
-function filterWeb(){
-  $('.projects-grid').isotope({ filter:  '.web' });
+function filterUnity(){
+  $('.projects-grid').isotope({ filter:  '.unity' });
   $('.filter-active').removeClass('filter-active');
-  $('.web-filter').addClass('filter-active');
+  $('.unity-filter').addClass('filter-active');
+}
+function filterSecurity(){
+  $('.projects-grid').isotope({ filter:  '.security' });
+  $('.filter-active').removeClass('filter-active');
+  $('.security-filter').addClass('filter-active');
+}
+function filterCpp(){
+  $('.projects-grid').isotope({ filter:  '.cpp' });
+  $('.filter-active').removeClass('filter-active');
+  $('.cpp-filter').addClass('filter-active');
 }
 jQuery(document).ready(function($) {
   $('.projects-grid').isotope({
