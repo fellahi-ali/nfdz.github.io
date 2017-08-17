@@ -101,10 +101,13 @@
   font-weight: 800;
 }
 .timeline-entry-summary {
-  text-align: left;
+  text-align: justify;
   padding-bottom: 20px;
   border-bottom: 2px solid #000000;
   display:none
+}
+.timeline-entry-summary a {
+    text-decoration: underline;
 }
 .timeline-end {
   border: inherit;
@@ -236,13 +239,9 @@
 .project-grid-item img:hover {
   cursor: inherit;
 }
-.project-grid-item p {
-  margin: 0 0 5px 0;
-  font-size: 12px;
-  font-style: italic;
-}
 @media only screen and (min-width: 768px) {
   .project-grid-item h4 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-top: 18px;
   }
 }
