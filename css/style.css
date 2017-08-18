@@ -43,10 +43,6 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.justify-text {
-  text-align: justify;
-  text-justify: auto;
-}
 .left-text {
   text-align: left;
 }
@@ -104,7 +100,7 @@
   font-weight: 800;
 }
 .timeline-entry-summary {
-  text-align: justify;
+  text-align: left;
   padding-bottom: 20px;
   border-bottom: 2px solid #000000;
   display:none
@@ -127,7 +123,7 @@
 	margin:0;
 	padding:0;
 	cursor:pointer;
-	font-size:10px;
+	font-size:11px;
 	font-weight:normal;
 	color:rgba(0,0,0,0);
 	background:transparent;
