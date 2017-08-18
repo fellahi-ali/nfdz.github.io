@@ -47,6 +47,9 @@
   text-align: justify;
   text-justify: auto;
 }
+.left-text {
+  text-align: left;
+}
 .col-section {
 }
 .unselectable {
