@@ -138,9 +138,8 @@
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   <div class="post-heading">
-                      <h1>Man must explore, and this is exploration at its greatest</h1>
-                      <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                      <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                      <h1>Tomatito</h1>
+                      <h2 class="subheading">One pomodoro application to rule them all, one technique to find your productivity</h2>
                   </div>
               </div>
           </div>
@@ -152,38 +151,157 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                  <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+                  <p>
+                    This project consists of a very tiny application for time management according to the pomodoro technique and thus improving productivity.
+                  </p>
+                  <p>
+                    The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.
+                    The technique uses a timer to break down work into intervals, traditionally 25 minutes in length,
+                    separated by short breaks. These intervals are named pomodoros, the plural in English of the Italian
+                    word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.
+                    <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">[1]</a>
+                  </p>
+                  <p>
+                    There are six steps in the technique:
+                  </p>
+                  <ol>
+                    <li>Decide on the task to be done.</li>
+                    <li>Set the pomodoro timer (25 minutes).</li>
+                    <li>Work on the task until the timer rings.</li>
+                    <li>After the timer rings, put a checkmark.</li>
+                    <li>If you have fewer than four checkmarks, take a short break (3-5 minutes), then go to step 2.</li>
+                    <li>After four pomodoros, take a longer break (15-30 minutes), reset your checkmark count to zero, then go to step 1.</li>
+                  </ol>
 
-                  <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+                  <h2 class="section-heading">Motivation</h2>
 
-                  <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+                  <p>
+                    There are several applications on all platforms that are based on this technique.
+                    The development of this project is not motivated to occupy a niche market.
+                    This project is mainly due to educational reasons. I wanted to try different Android features that I had not yet used and
+                    I needed to know before taking my certification exam. This was the perfect excuse to implement a
+                    tiny and simple application with my approach of what a pomodoro timer should be.
+                  </p>
+                  <p>
+                    The specific feature that I had not studied in my course of preparation for the exam
+                    and I needed to know was the use of <i>AlarmManager</i> (quoted text from the website about the content of the exam):
+                  </p>
+                  <blockquote>
+                    You must have knowledge of handling background services and schedule a task using AlarmManager.
+                  </blockquote>
+                  <p>
+                    I thought it might be interesting to study and use this feature in a real application while reviewing other concepts before going to the exam.
+                  </p>
 
-                  <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+                  <h2 class="section-heading">Concept</h2>
 
-                  <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+                  <p>In my opinion, the characteristics that a pomodoro application must have are:</p>
+                  <ul>
+                    <li>It must be very light in terms of the weight of the application and the memory it uses during its execution. Then: no heavy media files and few activities and fragments.</li>
+                    <li>You must be able to interact with it without having to open the application. Then: use system notifications with actions.</li>
+                    <li>Make it funny. Then: add animated gifs to the interface.</li>
+                    <li>Keep a simple record with the latest pomodoros.</li>
+                    <li>It must have settings to allow user modifying the times of the pomodoro technique.</li>
+                  </ul>
 
-                  <h2 class="section-heading">The Final Frontier</h2>
+                  <h2 class="section-heading">Implementation</h2>
 
-                  <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                  <p>
+                    The application has two activities (MainActivity and SettingsActivity) and two services (AlarmService and PomodoroService).
+                  </p>
+                  <p>
+                    MainActivity is the activity that has got all visual information about pomodoros. Its layout consists mainly in a ViewPager
+                    and a BottomNavigationView. The ViewPager could show two fragments (PomodoroFragment and RecordsFragment).
+                    PomodoroFragment shows the state of the current pomodoro with a ProgressBar and a text timer.
+                    RecordFragment shows the latest pomodoros in a sortered list in a RecyclerView.
+                  </p>
+                  <p>
+                    SettingsActivity just shows SettingsFragment. It is a standard settings fragment because it extends PreferenceFragment.
+                    It has to be careful to perform actions on the current pomodoro if user changes values of the preferences that affects it.
+                  </p>
+                  <p>
+                    AlarmService is triggered by AlarmManager and it just sends a notification updating the information about current pomodoro state.
+                    It uses intent action to resolve the type of the notification. It is important that it reschedule itself if needed.
+                  </p>
+                  <p>
+                    PomodoroService manages ongoing pomodoro in an asynchronous and safe way. It is needed in order to handle current pomodoro without
+                    open application, for example through notification actions. It uses intent action to resolve the operation to perform.
+                  </p>
+                  <p>
+                    There is an util static class called AlarmUtils that I think that is very important because it contents all the logic to work with AlarmManager.
+                    I highlight the following code that ensures correct behaviour in all versions:
+                  </p>
+                  <pre><code>
+if (android.os.Build.VERSION.SDK_INT >= 19) {
+    manager.setExact(AlarmManager.RTC_WAKEUP, state.stateUtcEndTime, operation);
+} else {
+    manager.set(AlarmManager.RTC_WAKEUP, state.stateUtcEndTime, operation);
+}
+                  </code></pre>
 
-                  <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                  <h3>Persistence</h3>
+                  <p>
+                    For data storage on the one hand, a traditional SQLite embedded database has been used to save pomodoro records.
+                    The definition of this database is located in the Contract class, the creation and update in DbHelper (that extends SQLiteOpenHelper)
+                    and the access in DatabaseManager. On the other hand, shared preferences has been used to store user preferences and the current pomodoro start time.
+                  </p>
 
-                  <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+                  <h3>Libraries</h3>
+                  <p>The 3rd party software that I have used for the application are:</p>
+                  <ul>
+                    <li><a href="https://github.com/JakeWharton/timber" target="_blank">Timber</a>:
+                      A logger with a small, extensible API which provides utility on top of Android's normal Log class. For example:
+                    </li>
+                    <pre><code>
+Timber.d("Alarm service triggered, action: " + action);
+                    </code></pre>
+                    <li><a href="https://github.com/bumptech/glide" target="_blank">Glide</a>:
+                      An image loading and caching library. It was the best option in order to use GIFs. For example:
+                    </li>
+                    <pre><code>
+Glide.with(getContext())
+     .load(R.raw.tomato_working)
+     .into(mStateGif);
+                    </code></pre>
+                    <li><a href="https://github.com/JakeWharton/butterknife" target="_blank">Butter Knife</a>:
+                      Bind Android views and callbacks to fields and methods. For example:
+                    </li>
+                    <pre><code>
+@BindView(R.id.iv_pomodoro_state) ImageView mStateGif;
+                    </code></pre>
+                  </ul>
 
-                  <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+                  <h2 class="section-heading">Conclusion</h2>
 
-                  <h2 class="section-heading">Reaching for the Stars</h2>
+                  <p>
+                    This application was very easy to implement. I was able to settle learned knowledge and learn some new ones.
+                    Coincidentally (I swear this is true), in my certification exam it was necessary to use AlarmManager
+                    in order to send a notification at an exact moment of the day, so this training made me feel relaxed and
+                    comfortable during the exam and it was a piece of cake.
+                  </p>
 
-                  <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+                  <img class="img-responsive" src="img/tomatito/screenshots.png" alt="">
+                  <span class="caption text-muted">Some screenshots</span>
 
-                  <img class="img-responsive" src="img/project-template/project-sample.jpg" alt="">
-                  <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+                  <p>
+                    I do not plan to add amazing features in the future, but feel free to contact me to suggest anything or report any bug.
+                  </p>
 
-                  <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+                  <p>
+                    The application is free software (GPLv3) and you can check the whole project in
+                    <a href="https://github.com/nfdz/tomatito" target="_blank">github</a>.
+                  </p>
 
-                  <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+                  <h3>Download</h3>
 
-                  <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+                  <p align="center"><a href="https://play.google.com/store/apps/details?id=io.github.nfdz.tomatito" target="_blank">
+                    <img width="250" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png?raw=true" alt="Get it on Google Play"/>
+                  </a></p>
+
+                  <p align="center"><a href="https://github.com/nfdz/tomatito/releases" target="_blank">
+                    <img width="250" src="img/tomatito/githubBadge.png?raw=true" alt="Get it on Github"/>
+                  </a></p>
+
               </div>
           </div>
       </div>
