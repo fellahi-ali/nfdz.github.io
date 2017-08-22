@@ -207,28 +207,28 @@
                   <h2 class="section-heading">Implementation</h2>
 
                   <p>
-                    The application has two activities (MainActivity and SettingsActivity) and two services (AlarmService and PomodoroService).
+                    The application has two activities (<i>MainActivity</i> and <i>SettingsActivity</i>) and two services (<i>AlarmService</i> and <i>PomodoroService</i>).
                   </p>
                   <p>
-                    MainActivity is the activity that has got all visual information about pomodoros. Its layout consists mainly in a ViewPager
-                    and a BottomNavigationView. The ViewPager could show two fragments (PomodoroFragment and RecordsFragment).
-                    PomodoroFragment shows the state of the current pomodoro with a ProgressBar and a text timer.
-                    RecordFragment shows the latest pomodoros in a sortered list in a RecyclerView.
+                    <i>MainActivity</i> is the activity that has got all visual information about pomodoros. Its layout consists mainly in a <i>ViewPager</i>
+                    and a <i>BottomNavigationView</i>. The <i>ViewPager</i> could show two fragments (<i>PomodoroFragment</i> and <i>RecordsFragment</i>).
+                    <i>PomodoroFragment</i> shows the state of the current pomodoro with a <i>ProgressBar</i> and a text timer.
+                    <i>RecordFragment</i> shows the latest pomodoros in a sortered list in a <i>RecyclerView</i>.
                   </p>
                   <p>
-                    SettingsActivity just shows SettingsFragment. It is a standard settings fragment because it extends PreferenceFragment.
+                    <i>SettingsActivity</i> just shows <i>SettingsFragment</i>. It is a standard settings fragment because it extends <i>PreferenceFragment</i>.
                     It has to be careful to perform actions on the current pomodoro if user changes values of the preferences that affects it.
                   </p>
                   <p>
-                    AlarmService is triggered by AlarmManager and it just sends a notification updating the information about current pomodoro state.
+                    <i>AlarmService</i> is triggered by <i>AlarmManager</i> and it just sends a notification updating the information about current pomodoro state.
                     It uses intent action to resolve the type of the notification. It is important that it reschedule itself if needed.
                   </p>
                   <p>
-                    PomodoroService manages ongoing pomodoro in an asynchronous and safe way. It is needed in order to handle current pomodoro without
+                    <i>PomodoroService</i> manages ongoing pomodoro in an asynchronous and safe way. It is needed in order to handle current pomodoro without
                     open application, for example through notification actions. It uses intent action to resolve the operation to perform.
                   </p>
                   <p>
-                    There is an util static class called AlarmUtils that I think that is very important because it contents all the logic to work with AlarmManager.
+                    There is an util static class called <i>AlarmUtils</i> that I think that is very important because it contents all the logic to work with <i>AlarmManager</i>.
                     I highlight the following code that ensures correct behaviour in all versions:
                   </p>
                   <pre><code>
@@ -242,8 +242,8 @@ if (android.os.Build.VERSION.SDK_INT >= 19) {
                   <h3>Persistence</h3>
                   <p>
                     For data storage on the one hand, a traditional SQLite embedded database has been used to save pomodoro records.
-                    The definition of this database is located in the Contract class, the creation and update in DbHelper (that extends SQLiteOpenHelper)
-                    and the access in DatabaseManager. On the other hand, shared preferences has been used to store user preferences and the current pomodoro start time.
+                    The definition of this database is located in the <i>Contract</i> class, the creation and update in <i>DbHelper</i> (that extends <i>SQLiteOpenHelper</i>)
+                    and the access in <i>DatabaseManager</i>. On the other hand, shared preferences has been used to store user preferences and the current pomodoro start time.
                   </p>
 
                   <h3>Libraries</h3>
@@ -275,7 +275,7 @@ Glide.with(getContext())
 
                   <p>
                     This application was very easy to implement. I was able to settle learned knowledge and learn some new ones.
-                    Coincidentally (I swear this is true), in my certification exam it was necessary to use AlarmManager
+                    Coincidentally (I swear this is true), in my certification exam it was necessary to use <i>AlarmManager</i>
                     in order to send a notification at an exact moment of the day, so this training made me feel relaxed and
                     comfortable during the exam and it was a piece of cake.
                   </p>
