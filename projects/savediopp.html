@@ -221,15 +221,15 @@
                   <p>
                     <i>SettingsActivity</i> just shows <i>SettingsFragment</i>. It is a standard settings fragment because it extends <i>PreferenceFragment</i>.
                     It has to be careful to perform actions on stored bookmarks if user changes values of the preferences that affects it like
-                    change user web service account API. This also contains export and import operations. To do this it makes use of standard
-                    system activities to select files by using implicit intentions with actions (<i>android.intent.action.OPEN_DOCUMENT</i> and
-                    <i>android.intent.action.CREATE_DOCUMENT</i>).
+                    change user web service account API. This also contains export and import operations. To do this it uses standard
+                    system activities to select files by using implicit intentions with actions (<i>OPEN_DOCUMENT</i> and
+                    <i>CREATE_DOCUMENT</i>).
                   </p>
 
                   <p>
                     <i>NewBookmarkActivity</i> and <i>EditBookmarkActivity</i> share almost all the code and layouts because the functionality that they offer
                     are close to be the same. The only differences between the two are the actions taken when creating the activity
-                    and pressing the ok button. <i>NewBookmarkActivity</i> has to check if the intent contents an URL (from share option) and
+                    and pressing the ok button. <i>NewBookmarkActivity</i> has to check if the intent contains an URL (from share option) and
                     saves it as new bookmark. <i>EditBookmarkActivity</i> has to retrieve information about the bookmark to edit and replace it instead create a new one.
                   </p>
 
@@ -256,7 +256,7 @@
 
                   <p>
                     <i>FavoritesWidgetProvider</i> provides the metadata, creates and updates the favorites widget. It extends <i>AppWidgetProvider</i> and receives and
-                    process the broadcast events of the system <i>android.appwidget.action.APPWIDGET_UPDATE</i> and also a custom one <i>io.github.nfdz.savedio.ACTION_FAV_DATA_UPDATED</i>.
+                    process the broadcast events of the system <i>APPWIDGET_UPDATE</i> and also a custom one <i>FAV_DATA_UPDATED</i>.
                   </p>
 
                   <center><img class="img-responsive" src="img/savediopp/WidgetScreenshot.png" width="250px" alt=""></center>
@@ -329,10 +329,14 @@ Picasso.with(mContext)
                       Type-safe HTTP client for Android and Java. For example:
                     </li>
                     <pre><code>
-@GET("bookmarks/{id}")
-Call&lt;BookmarkAPI&gt; retrieveSingleBookmark(@Path("id") String bookmarkId,
-                                         @Query("devkey") String devKey,
-                                         @Query("key") String userKey);
+Gson gson = new GsonBuilder()
+       .setLenient()
+       .create();
+Retrofit retrofit = new Retrofit.Builder()
+       .baseUrl(BASE_URL)
+       .addConverterFactory(GsonConverterFactory.create(gson))
+       .build();
+mAPI = retrofit.create(SavedioAPI.class);
                     </code></pre>
                     <li><a href="https://github.com/firebase/firebase-jobdispatcher-android" target="_blank">Firebase JobDispatcher</a>:
                       A library for scheduling background jobs in your Android app.
@@ -372,7 +376,7 @@ dispatcher.schedule(syncJob);
                   <p>
                     Thanks to the development of this application I have been able to learn how to use some very interesting libraries.
                     I also liked the work of developing it completely from scratch. The fact of publishing it in google play and
-                    having some users is very interesting from the educational point of view to learn how the whole process of publishing,
+                    having some users is very interesting from the educational point of view to learn the whole process of publishing,
                     maintenance, support and update.
                   </p>
 
