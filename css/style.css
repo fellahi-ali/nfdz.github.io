@@ -1,3 +1,6 @@
+.container a {
+    text-decoration: underline;
+}
 .scrollTop-button {
   display: none;
   position: fixed;
