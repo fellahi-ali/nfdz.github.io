@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Noé Fernández - Projects</title>
+  <title>Noé Fernández - Projects - Interactive Tree</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -133,14 +133,13 @@
 
   <!-- Page Header -->
   <!-- Set your background image for this header on the line below. -->
-  <header class="intro-header" style="background-image: url('img/project-template/project-bg.jpg')">
+  <header class="intro-header" style="background-image: url('img/tree-expo/project-bg.jpg')">
       <div class="container">
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   <div class="post-heading">
-                      <h1>Man must explore, and this is exploration at its greatest</h1>
-                      <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                      <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                      <h1>Interactive tree advertising stand</h1>
+                      <h2 class="subheading">Arduino and Raspberry Pi removing the limits of common advertising</h2>
                   </div>
               </div>
           </div>
@@ -152,38 +151,201 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                  <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+                  <p>
+                    This project is very exciting and fun. As a good Arduino and Raspberry Pi maker I am always willing
+                    and comfortable working with the hardware at the same time as with the software and this project is
+                    very interesting from this point of view.
+                  </p>
 
-                  <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+                  <p>
+                    It is basically a custom developed advertising stand for an important customer for a local fair.
+                    The original idea was developed by a very creative graphic designer and he delegated to me the technical aspects of the development.
+                  </p>
 
-                  <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+                  <p>
+                    The goal was to develop a very tall advertising stand that was seen from throughout the fair and invite
+                    people to interact with it to get more information. The proposed design was a tree where its leafs were
+                    illuminated boxes with brands, a television screen in the trunk of the tree that showed more information
+                    and some touch panels with the brands around the trunk.
+                  </p>
 
-                  <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+                  <h2 class="section-heading">Concept</h2>
 
-                  <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+                  <p>
+                    The design as you can see is very well detailed and in my opinion correct. Technically it is very feasible
+                    to implement and it is possible easily observe the different elements that will compound the tree.
+                  </p>
 
-                  <h2 class="section-heading">The Final Frontier</h2>
+                  <p>
+                    The specifications are as follows:
+                  </p>
+                  <ul>
+                    <li>The display should invite you to touch the panels in the standby mode.</li>
+                    <li>When someone touches a button, it must turn on the associated leaf-box and play the informative video on the screen.
+                      It must also turn off the last illuminated leaf-box if there is one.</li>
+                    <li>There must be a safety margin between valid interactions in order to avoid changing videos repeatedly in short intervals.</li>
+                    <li>When the informational video is finished, the leaf-box must be turned off and the screen must again invite to touch the panels.</li>
+                    <li>It must have an automatic mode, so if it is a long time without interactions it will start to illuminate the
+                      leaf-boxes and play informative videos automatically.</li>
+                    <li>The material used must fit the budget of the project since the tree is one more element of the stand and should not spend all the resources.</li>
+                    <li>The main components and boards must be redundant.</li>
+                  </ul>
 
-                  <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                  <p>
+                    After analyzing it from a technical point of view, we came to the conclusion that the project will consist of:
+                  </p>
+                  <ul>
+                    <li>A custom made wooden structure with boxes with the brands. This point did not come within my tasks and therefore I will skip it here.</li>
+                    <li>Several relays connected on one side to the bulbs (which will be quite powerful) and an AC power supply,
+                      and on the other side to an Arduino board that will be the controller of the relay.</li>
+                    <li>Several touch panels connected to an Arduino board that will monitor the input.</li>
+                    <li>A large full HD television screen connected by HDMI to a Raspberry Pi board that will play the videos.</li>
+                  </ul>
 
-                  <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                  <img class="img-responsive" src="img/tree-expo/scheme.png" alt="">
+                  <span class="caption text-muted">Concept scheme</span>
 
-                  <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+                  <h2 class="section-heading">Implementation</h2>
 
-                  <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+                  <p>
+                    The Arduino board chosen as the controller was the
+                    <a href="https://www.arduino.cc/en/Main/arduinoBoardMega" target="_blank">MEGA</a> version
+                    because we needed the maximum number of possible digital inputs and outputs (this board has 54) since at first it
+                    was not known the exact number of products that customer wanted to advertise and the difference of price is not important.
+                  </p>
 
-                  <h2 class="section-heading">Reaching for the Stars</h2>
+                  <p>
+                    I also had other Arduinos in my workshop with which I could do experiments and try things (in the images you can see an
+                    Arduino Leonardo that was very interesting because this model can simulate an USB keyboard).
+                  </p>
 
-                  <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+                  <p>
+                    The chosen Raspberry Pi model was the Model B. This choice was simply because we had several in the workshop
+                    and was quite enough for the project.
+                  </p>
 
-                  <img class="img-responsive" src="img/project-template/project-sample.jpg" alt="">
-                  <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+                  <p>
+                    The resulting board is of small size and can be concealed in the 'roots' of the tree.
+                  </p>
 
-                  <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+                  <img class="img-responsive" src="img/tree-expo/tree-board.jpeg" alt="">
+                  <span class="caption text-muted">Board with chosen components</span>
 
-                  <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+                  <h3>Touch panels</h3>
 
-                  <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+                  <p>
+                    To make interactive touch panels we rely on the typical capacitive sensors that are very well documented
+                    and are very easy to do. Basically it consists of a few resistors, capacitors, conductive material and some tin.
+                  </p>
+
+                  <center><img class="img-responsive" src="img/tree-expo/CapSense.gif" alt=""></center>
+                  <span class="caption text-muted">Capacitive sensor scheme</span>
+
+                  <p>
+                    I recommend reading the official Arduino
+                    <a href="https://playground.arduino.cc/Main/CapacitiveSensor" target="_blank">website</a> about it
+                    to understand how it works and how to use it in any project.
+                  </p>
+
+                  <center><iframe width="640" height="360" src="https://www.youtube.com/embed/BHQPqQ_5ulc" frameborder="0" allowfullscreen></iframe></center>
+                  <span class="caption text-muted">Capacitive sensor example video</span>
+
+                  <p>
+                    There is an Arduino software library to use that deal with all the underlying complexity so from the software
+                    point of view it was also a good choice. For example, to define a sensor using this library and
+                    read its input only the following code is needed:
+                  </p>
+                  <pre><code>
+CapacitiveSensor sensor = CapacitiveSensor(14,15);
+long total =  sensor.capacitiveSensor(30);
+if (total > SENSOR_THRESHOLD)
+{
+  // do something
+}
+                  </code></pre>
+
+                  <h3>Relay and light bulbs</h3>
+
+                  <p>
+                    To control the high voltage circuit with the Arduino board and thus turn on the bulbs was used two eight
+                    channel DC 5V relay module. These relays are very easy to use, economical and reliable.
+                  </p>
+
+                  <center><img class="img-responsive" src="img/tree-expo/relays.jpg" alt=""></center>
+                  <span class="caption text-muted">Eight channel DC 5V relay module</span>
+
+                  <p>
+                    From the software point of view it is only necessary to set LOW/HIGH a digital output pin of the Arduino board. For example:
+                  </p>
+                  <pre><code>
+digitalWrite(outputs[selectedBrand], HIGH);
+                  </code></pre>
+
+                  <h3>Communication between Arduino and Raspberry Pi</h3>
+
+                  <p>
+                    Communication is done via the USB connection. When Arduino turn on a leaf-box, it must send an order to the serial port.
+                    Raspberry Pi must be listening and reading this port in an infinite loop to process all the video playback orders that it receives.
+                  </p>
+
+                  <p>
+                    For example, to send the order to play video number one, the following code must be executed in Arduino:
+                  </p>
+                  <pre><code>
+Serial.begin(9600);
+Serial.print("SELECT_1\n");
+                  </code></pre>
+                  <p>
+                    And the following in Raspberry Pi:
+                  </p>
+                  <pre><code>
+ser = serial.Serial(usbPath, 9600)
+selection = ser.readline()
+if "SELECT_1" in selection:
+  // do something
+                  </code></pre>
+
+                  <h3>TV screen with informative videos</h3>
+
+                  <p>
+                    The Raspberry Pi program that plays the videos and reads the orders that come from Arduino is written in Python.
+                    I have based on the player <a href="https://github.com/jbaiter/pyomxplayer" target="_blank">pyomxplayer</a>
+                    that it is based on <a href="https://github.com/huceke/omxplayer" target="_blank">omxplayer</a> (pyomxplayer is a Python wrapper).
+                  </p>
+
+                  <p>
+                    I just had to extend it, removing a lot of functionality that I did not need (like the playback control interface)
+                    and adding the desired behavior by default (full screen, looping of the standby video, etc). In the main thread it
+                    listens the serial port to receive the orders of Arduino and executes them. For example, to play the informative
+                    video number one would invoke the following method:
+                  </p>
+
+                  <pre><code>
+def select_1(self):
+  if self.selected == 1:
+    return;
+  self.stop_omx()
+  self.selected = 1
+  self.selectedTime = self.current_millis_time()
+  self.start_omx('/home/pi/Desktop/VIDEOS/VIDEO_1.mp4')
+  self.schedStandby(40)
+                  </code></pre>
+
+                  <h2 class="section-heading">Conclusion</h2>
+
+                  <p>
+                    The result of this project was successful. Both the customer and my intermediate friends were happy.
+                    I personally was happy to participate in it.
+                  </p>
+
+                  <p>
+                    Jobs involving software and hardware are very entertaining challenges to perform.
+                    I am delighted to work with Arduino and Raspberry Pi boards and I will do it again as soon as I have a chance.
+                  </p>
+
+                  <center><img class="img-responsive" src="img/tree-expo/tree.jpeg" alt=""></center>
+                  <span class="caption text-muted">Photo of the tree in operation</span>
+
               </div>
           </div>
       </div>
