@@ -33,7 +33,8 @@ function filterCpp(){
   $('.filter-active').removeClass('filter-active');
   $('.cpp-filter').addClass('filter-active');
 }
-jQuery(document).ready(function($) {
+
+$(window).on("load", function() {
   $('.projects-grid').isotope({
     // options
     itemSelector: '.project-grid-item',
