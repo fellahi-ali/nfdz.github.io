@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /_common/
+Disallow: /img/
+Disallow: /pomodoro/
+Disallow: /vendor/
+Disallow: /404.html
+Disallow: /projects/img/
+Disallow: /projects/project-template.html
+Allow: /*.css$
+Allow: /*.js$
