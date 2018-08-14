@@ -49,6 +49,28 @@
       ga('send', 'pageview');
 
     </script>
+
+    <!-- Cookies Consent -->
+    <link rel="stylesheet" type="text/css" href="vendor/cookieconsent/cookieconsent.min.css" />
+    <script src="vendor/cookieconsent/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#13191C"
+        },
+        "button": {
+          "background": "#1E90FF"
+        }
+      },
+      "theme": "classic",
+      "position": "bottom-right",
+      "content": {
+        "message": "This website uses cookies just to track visits (analytics stuff for me)."
+      }
+    })});
+    </script>
 </head>
 
 <body>
