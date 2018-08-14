@@ -242,21 +242,17 @@
 }
 .project-grid-item {
   text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-bottom: 15px;
-  width: 60%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
   display: inherit;
 }
-.project-grid-item img {
-  width: 85%
-}
+/* .project-grid-item img {
+} */
 .project-grid-item img:hover {
   cursor: inherit;
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .project-grid-item h4 {
-    font-size: 22px;
-    margin-top: 18px;
   }
-}
+} */
