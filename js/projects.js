@@ -8,6 +8,11 @@ function filterAndroid(){
   $('.filter-active').removeClass('filter-active');
   $('.android-filter').addClass('filter-active');
 }
+function filterLibrary(){
+  $('.projects-grid').isotope({ filter:  '.library' });
+  $('.filter-active').removeClass('filter-active');
+  $('.library-filter').addClass('filter-active');
+}
 function filterJava(){
   $('.projects-grid').isotope({ filter:  '.java' });
   $('.filter-active').removeClass('filter-active');
