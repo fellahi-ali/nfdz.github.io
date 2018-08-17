@@ -89,6 +89,30 @@
     padding-right: 40px;
   }
 }
+.menu-headers {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.menu-headers li {
+  display: inline-block;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+.menu-headers li a {
+  outline: 0;
+  display: inline-block;
+  text-decoration: inherit;
+}
+.menu-headers li a:hover {
+  text-decoration: inherit;
+  color: #1E90FF; /* <- This is the accent color */
+}
 
 /* Timeline styles */
 
