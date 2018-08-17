@@ -6,12 +6,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Library for dependency inversion in Java/Android using service locator pattern very easy to use and lightweight ">
-  <meta name="keywords" content="Java,Android,Library,Locator,Software,Jitpack,TDD,Tests">
+  <meta name="description" content="Simple Android Library for Indoor Wi-Fi Navigation">
+  <meta name="keywords" content="Android,Library,Wifi,Navigation,GPS,Software,Jitpack">
   <meta name="author" content="Noé Fernández">
   <meta name="robots" content="index,follow">
 
-  <title>Project: Dependency Locator</title>
+  <title>Project: Findoor</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -147,13 +147,13 @@
 
   <!-- Page Header -->
   <!-- Set your background image for this header on the line below. -->
-  <header class="intro-header" style="background-image: url('img/dependency-locator/project-bg.jpg')">
+  <header class="intro-header" style="background-image: url('img/findoor/project-bg.jpg')">
       <div class="container">
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                   <div class="post-heading">
-                      <h1>Dependency Locator</h1>
-                      <h2 class="subheading">Dependency inversion using service locator pattern</h2>
+                      <h1>Findoor</h1>
+                      <h2 class="subheading">Wi-Fi Navigation</h2>
                   </div>
               </div>
           </div>
@@ -167,63 +167,34 @@
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
                   <p>
-                    Library for dependency inversion in Java/Android using service locator pattern very easy to use and lightweight.
-                    It was designed to be very quick to learn. With this library you have no excuse to not implement dependency inversion
-                    in your project from the first moment. It is very easy to use for those who have been using this design pattern in
-                    other frameworks and languages. I have avoided using the word 'Service' since this concept is linked to other types
-                    of functionalities in Android.
+                    Simple android library for indoor and outdoor Wi-Fi navigation. It makes it easy to work with the Wi-Fi navigation in any kind of scenarios.
                   </p>
 
                   <p>
-                    For the development of this library I have followed a <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Test-driven development</a>(TDD) process.
-                    I was very interested in creating a good battery of unit tests to ensure that it works well in any case
-                    as it is a critical piece of the software architecture.
+                    This library doesn't require any special version of android or a special hardware feature.
+                    The purpose is different from that of the Wi-Fi navigation feature included in the new protocol standard.
+                    This library assumes that there is a set of records of the different possible spots where the mobile can be located.
+                    The library makes easy to get records from Wi-Fi scanner live and to process and contrast the data set with the stored ones.
+                    I have developed a sample application to show how the library is used and get records of the spots to use later inside your application.
                   </p>
 
-                  <p>
-                     The library is free software (Apache-2.0) and you can follow its development in
-                     <a href="https://github.com/nfdz/DependencyLocator" target="_blank">github</a>.
-                  </p>
+                  <center><img class="img-responsive" src="img/findoor/dummy-scenario.png" alt=""></center>
+                  <span class="caption text-muted">Dummy scenario</span>
 
                   <h2 class="section-heading">How to use it</h2>
 
                   <p>
-                    To use it you just have to do the following:
+                    The learning curve of this library is very fast, the classes and concepts with which you have to learn to work are the following:
                   </p>
 
                   <ul>
-                    <li>Implement <i>Dependency</i> or <i>SingletonDependency</i> interface.</li>
-                    <li>Implement <i>DependencyProvider</i> that know how to create previous dependency.</li>
-                    <li>
-                      Supply these provider to <i>DependencyLocator</i> in some point before use the dependencies (for instance at the entry point of your application).
-                    <pre><code>
-DependencyLocator.provide(MyDependency.class, new MyDependencyProvider());
-                    </code></pre>
-                    </li>
-                    <li>
-                      Locate this dependency where and when you want to use:
-                      <pre><code>
-MyDependency dependency = (MyDependency)DependencyLocator.locate(MyDependency.class);
-                      </code></pre>
-                    </li>
-                    <li>
-                      Optional: Release this dependency when you do not need use it anymore:
-                      <pre><code>
-DependencyLocator.release(dependency);
-                      </code></pre>
-                    </li>
+                    <li><a href="https://github.com/nfdz/findoor/blob/master/findoor/src/main/java/io/github/nfdz/findoor/model/Record.java" target="_blank">Record</a></li>
+                    <li><a href="https://github.com/nfdz/findoor/blob/master/findoor/src/main/java/io/github/nfdz/findoor/model/LocationComparison.java" target="_blank">LocationComparison</a></li>
+                    <li><a href="https://github.com/nfdz/findoor/blob/master/findoor/src/main/java/io/github/nfdz/findoor/FindoorRecorder.java" target="_blank">FindoorRecorder</a></li>
+                    <li><a href="https://github.com/nfdz/findoor/blob/master/findoor/src/main/java/io/github/nfdz/findoor/FindoorProcessor.java" target="_blank">FindoorProcessor</a></li>
                   </ul>
 
-                  <h3>Demo project</h3>
-
-                  <p>
-                    There is a <a href="https://github.com/nfdz/DependencyLocator/tree/master/Demo" target="_blank">java demo project</a> with three dependencies, one of them nested.
-                    You can check it if you want to understand how it works.
-                  </p>
-
-                  <h2 class="section-heading">Download</h2>
-
-                  <h3>Jitpack</h3>
+                  <h2 class="section-heading">Download: Jitpack</h2>
 
                   <p>
                     It is very use integrate this library in your project as a dependency of your build system thanks to Jitpack.
@@ -239,7 +210,7 @@ allprojects {
 }
 ...
 dependencies {
-   compile 'com.github.nfdz:DependencyLocator:v1.0.0'
+   implementation 'com.github.nfdz:findoor:v1.0.1'
 }
                   </code></pre>
 
@@ -248,31 +219,27 @@ dependencies {
                     <a href="https://jitpack.io/docs/BUILDING/" target="_blank">documentation</a> if you need help with yours.
                   </p>
 
-                  <h3>Manual JAR</h3>
+                  <h2 class="section-heading">Sample application</h2>
 
                   <p>
-                    You can download library JAR file from github <a href="https://github.com/nfdz/DependencyLocator/releases" target="_blank">releases</a> webpage of the repository.
-                  </p>
-
-                  <h2 class="section-heading">Unit tests</h2>
-
-                  <p>
-                    I have created two dependencies with several tags and flags to use in the tests. These are <i>MyDependency</i> and <i>MySingletonDependency</i>.
+                    This app shows several uses cases of this library and it is totally functional.
+                    Feel free to use it as you need. For example, you could use this app in order to get records of location spots
+                    you need and serve or embed them in your production app.
                   </p>
 
                   <p>
-                    The sets of tests are the following:
+                     The library is free software (Apache-2.0) and you can follow its development in
+                     <a href="https://github.com/nfdz/findoor" target="_blank">github</a>.
                   </p>
+
+                  <center><img class="img-responsive" src="img/findoor/findoor-sample-screenshots.png" alt=""></center>
+                  <span class="caption text-muted">Screenshots</span>
+
+                  <h3>Download</h3>
 
                   <ul>
-                    <li>
-                      <a href="https://github.com/nfdz/DependencyLocator/blob/master/Library/src/test/java/io/github/nfdz/dependencylocator/MainTest.java" target="_blank">MainTest</a>:
-                      It checks that basic functionality and behaviour is correct. Tests are <i>testProvideSingletonDependency</i>, <i>testProvideDependency</i>, <i>testOverrideProvider</i> and <i>testOverrideUsedProvider</i>.
-                    </li>
-                    <li>
-                      <a href="https://github.com/nfdz/DependencyLocator/blob/master/Library/src/test/java/io/github/nfdz/dependencylocator/MultithreadingTest.java" target="_blank">MultithreadingTest</a>:
-                      It checks that multi-threading behaviour is correct. Tests are <i>testProvideDependency</i> and <i>testProvideSingletonDependency</i>.
-                    </li>
+                    <li><a href="https://play.google.com/store/apps/details?id=io.github.nfdz.findoordemoapp" target="_blank">Google Play</a></li>
+                    <li><a href="https://github.com/nfdz/findoor/releases" target="_blank">Github</a></li>
                   </ul>
 
               </div>
