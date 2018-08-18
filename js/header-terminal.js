@@ -23,7 +23,6 @@ jQuery(document).ready(function($) {
       "I am a traveler",
       "I am an Android developer",
       "I am a team player",
-      "I am a telematics engineer",
       "I am a software libre advocate",
       "I am a Raspberry Pi and Arduino maker",
       "I am a siesta advocate",
